@@ -1,6 +1,6 @@
 import React from 'react';
 import { X , Menu, MenuIcon } from 'lucide-react';
-import SigninButton from '../Buttons/SIgnIn/SigninButton';
+import SigninButton from '../Buttons/SignIn/SigninButton';
 const NavBar = () => {
     const [toggleMenuBar, setToggleMenuBar] = React.useState(false);
     const navItems = [
