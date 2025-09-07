@@ -9,7 +9,7 @@ const NavBar = () => {
 
     return (
         <>
-            <header className='fixed w-full flex items-center justify-between px-6 py-3 sm:px-18 sm:py-2'>
+            <header className='fixed w-full flex items-center justify-between px-6 py-3 sm:px-18 sm:py-2 shadow'>
                 <h1 className='text-2xl sm:text-4xl'>NoteLeech AI</h1>
 
             {/* Desktop View */}
