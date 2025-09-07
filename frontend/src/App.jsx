@@ -1,9 +1,11 @@
 import React from 'react';
+import NavBar from './Header/NavBar';
 
 const App = () => {
   return (
-    <div>
-      <h1 className='font-bold text-7xl text-amber-400'>Shree Ganesh</h1>
+    <div className=''>
+      <NavBar />
+    
     </div>
   );
 };
