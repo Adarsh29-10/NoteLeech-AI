@@ -1,8 +1,5 @@
 import React from 'react';
-import ChatWithPDFCard from '../../Components/Cards/LandingPageCards/ChatWithPDFCard';
-import CreateNotesCard from '../../Components/Cards/LandingPageCards/CreateNotesCard';
-import GenerateFlashcardCard from '../Cards/LandingPageCards/GenerateFlashcardCard';
-import QuestionAnswerCard from '../Cards/LandingPageCards/QuestionAnswerCard';
+import LandingPageCards from '../Cards/LandingPageCards/LandingPageCards';
 
 function LandingPage() {
     return (
@@ -10,11 +7,7 @@ function LandingPage() {
             <h1>Welcome to NoteLeech-AI</h1>
             <p>Your AI-powered note management solution.</p>
             <div className='mt-10 flex space-x-6'>
-                <ChatWithPDFCard />
-                <CreateNotesCard />
-                <br />
-                <GenerateFlashcardCard/>
-                <QuestionAnswerCard/>
+                <LandingPageCards />
             </div>
         </div>
     );
