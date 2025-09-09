@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingPageCards from '../Cards/LandingPageCards/LandingPageCards';
-import ChatWithPDFButton from '../Buttons/ChatWithPDF/ChatWithPDFButton';
+import ChatWithPDFButton from '../Buttons/ChatWithPdfButton/ChatWithPDFButton';
 import CreateMagicalNotesButton from '../Buttons/CreateMagicalNotes/CreateMagicalNotesButton';
 import LandingPageImage from '../../images/LandingPage.png';
 import bg from '../../images/bg.jpg';
