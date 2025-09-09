@@ -16,7 +16,6 @@ const App = () => {
 
         <Route path='/chat-with-pdf' element={<ChatWithPDF />}></Route>
       </Routes>
-      
     </>
   );
 };
