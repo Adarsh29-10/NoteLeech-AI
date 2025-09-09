@@ -1,6 +1,8 @@
 import React from 'react';
 import { X , Menu, MenuIcon } from 'lucide-react';
 import SigninButton from '../Buttons/SignIn/SigninButton';
+import SignUpButton from '../Buttons/SignUp/SignUpButton';
+
 const NavBar = () => {
     const [toggleMenuBar, setToggleMenuBar] = React.useState(false);
     const navItems = [
@@ -10,7 +12,7 @@ const NavBar = () => {
     return (
         <>
             <header className='fixed w-full flex items-center justify-between px-6 py-3 sm:px-18 sm:py-2 shadow'>
-                <h1 className='text-2xl sm:text-4xl'>NoteLeech AI</h1>
+                <h1 className='text-blue-500 sm:text-4xl'>NoteLeech AI</h1>
 
             {/* Desktop View */}
                 <div className='hidden md:flex gap-4'>
@@ -25,7 +27,7 @@ const NavBar = () => {
                     ))} */}
 
                     <SigninButton/>
-
+                    <SignUpButton/>
                 </div>
 
 
