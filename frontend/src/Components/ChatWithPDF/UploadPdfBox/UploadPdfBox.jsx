@@ -1,11 +1,29 @@
 import React from 'react';
 import { UploadIcon } from 'lucide-react';
+import {useDropzone} from 'react-dropzone'
 
-const UploadPdfBox = () => {
+const UploadPdfBox = ({ onFileAccepted }) => {
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        accept: { "application/pdf": [".pdf"] },
+        maxSize: 10 * 1024 * 1024, // 10MB
+        multiple: false,
+        onDrop: (acceptedFiles) => {
+        if (acceptedFiles && acceptedFiles.length > 0) {
+            onFileAccepted(acceptedFiles[0]); // send file back to parent
+        }
+        },
+    });
+
     return (
         <div 
-            className='bg-white h-64 w-7xl border-2 border-dashed flex items-center justify-center flex-col gap-3 rounded-md hover:border-blue-500 transition-colors"'>
-                
+            {...getRootProps()}
+            className={`bg-white h-64 w-7xl border-2 border-dashed flex items-center justify-center flex-col gap-3 rounded-md hover:border-blue-500 transition-colors 
+            ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-400"}`
+            }
+        >
+            
+            <input {...getInputProps()} />
+
             <UploadIcon size={40} className='text-gray-500' />
             <h1 className='text-gray-500'>Upload your PDF</h1>
             <p className="text-xs text-gray-400">(Drag & drop or click to browse)</p>
