@@ -15,10 +15,10 @@ const LandingPageCards = () => {
     return (
         <>
             {items.map((item) => (
-                <div className="bg-gray-100 rounded-2xl p-6 w-72">
+                <div className="bg-[#666666] rounded-2xl p-6 w-72">
                     <div className="text-2xl mb-4">{item.icon}</div>
-                    <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
-                    <p className="text-gray-600 text-sm">
+                    <h2 className="text-blue-400 font-semibold mb-2">{item.title}</h2>
+                    <p className="text-white text-sm">
                         {item.description}
                     </p>
                 </div>

@@ -5,7 +5,7 @@ const ChatWithPDFButton = () =>{
     return(
         <button 
             onClick={()=>navigate('/chat-with-pdf')}
-            className='bg-green-500 hover:bg-green-600 rounded-lg px-8 py-4 text-white text-base font-semibold transition-colors duration-200 shadow-md w-full'>
+            className='bg-[#0f0f0f] hover:bg-[#171717] border border-white rounded-lg px-8 py-4 text-white font-bold transition-colors duration-200 shadow-sm w-full'>
             Chat with PDF
         </button>
     )
