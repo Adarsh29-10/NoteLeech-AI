@@ -6,11 +6,11 @@ const ChatWithPDF = () => {
 
     return (
         <>
-            <div className='min-h-screen bg-gray-100 '>
+            <div className='min-h-screen bg-[#0d1117] '>
                 <div className=' h-screen text-center flex flex-col items-center gap-10'>
 
                     {/* heading */}
-                    <h1 className='pt-20 text-4xl'>NoteLeech AI</h1>
+                    <h1 className='pt-20 text-4xl text-white'>NoteLeech AI</h1>
 
                     {!uploadedFile ? (
                         <UploadPdfBox onFileAccepted={(file) => setUploadedFile(file)} />
