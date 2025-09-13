@@ -1,10 +1,13 @@
 import express from 'express'
+import pdfRouter from './routes/pdf.routes.js'
 
 const app = express()
 const PORT = 8000
 
-app.get('/', (req, res)=>{
-    res.send('Heyya')
-})
+app.use(express.json())
+
+
+app.use('/pdf', pdfRouter)
+
 
 app.listen(PORT, ()=>{ console.log(`Node server listening to port ${PORT}`)})
