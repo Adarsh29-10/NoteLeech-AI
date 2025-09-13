@@ -17,7 +17,7 @@ const UploadPdfBox = ({ onFileAccepted }) => {
     return (
         <div 
             {...getRootProps()}
-            className={`bg-[#171717] h-64 w-7xl border-2 border-dashed flex items-center justify-center flex-col gap-3 rounded-md hover:border-blue-500 transition-colors 
+            className={`bg-[#171717] h-64 w-[90%] sm:h-64 sm:w-7xl border-2 border-dashed flex items-center justify-center flex-col gap-3 rounded-md hover:border-blue-500 transition-colors 
             ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-400"}`
             }
         >
