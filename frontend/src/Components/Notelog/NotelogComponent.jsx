@@ -18,15 +18,16 @@ export default function Dashboard() {
   return (
     <>
     <NotelogNavbar />
-    <div className="min-h-screen bg-[#0d1117] text-white pt-20 px-6">
+    <div className="min-h-screen bg-[#0d1117] text-white pt-20 px-12">
       {/* Filter Section */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Previous Notes</h1>
+
         <input
           type="date"
           value={filterDate}
           onChange={(e) => setFilterDate(e.target.value)}
-          className="px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-600"
+          className="px-3 py-2 rounded-md bg-[#171717] text-white border border-gray-600 cursor-pointer"
         />
       </div>
 
@@ -36,7 +37,7 @@ export default function Dashboard() {
           filtered.map((course) => (
             <div
               key={course.id}
-              className="bg-gray-900 rounded-xl p-5 shadow-md hover:shadow-lg transition"
+              className="bg-[#171717] border border-gray-600 rounded-xl p-5 shadow-md hover:shadow-lg hover:border-gray-100 transition"
             >
               <h2 className="text-xl font-semibold">{course.title}</h2>
               <p className="text-gray-400 text-sm">{course.date}</p>

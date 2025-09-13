@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import {useNavigate} from 'react-router-dom'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full bg-[#0d1117] fixed top-0 z-50 shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="sticky bg-[#0d1117] top-0 z-50 shadow">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Left: Hamburger + Brand */}
             <div className="flex justify-start items-center space-x-6">
@@ -18,14 +20,14 @@ export default function Navbar() {
               >
                 <Menu className="w-6 h-6 text-white" />
               </button>
-              <span className="text-2xl font-bold text-blue-400">NoteLog</span>
+              <span className="text-2xl font-semibold text-blue-400 cursor-pointer">NoteLog</span>
             </div>
 
             {/* Right: Profile */}
             <img
-              src=""
+              src="https://imgs.search.brave.com/KgU6V_7TgxxBcn0X4LKJtLu2UDB4oIxk4GGshNPPyVc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmln/cmVldC5jb20vd3At/Y29udGVudC9zbXVz/aC13ZWJwLzIwMjMv/MDMvQ3V0ZS1jYXQt/UGljdHVyZXMtRm9y/LURwLTc1N3gxMDI0/LmpwZy53ZWJw"
               alt=""
-              className="w-10 h-10 rounded-full border-2 border-white"
+              className="w-10 h-10 rounded-full border-2 border-gray-300"
             />
           </div>
         </div>
@@ -41,7 +43,7 @@ export default function Navbar() {
           />
 
           {/* Drawer */}
-          <div className="relative w-64 bg-[#0d1117] h-full shadow-lg p-6 flex flex-col">
+          <div className="relative w-72 bg-[#0d1117] h-full shadow-lg p-6 flex flex-col">
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
@@ -52,7 +54,9 @@ export default function Navbar() {
 
             {/* Menu Links */}
             <nav className="mt-10 flex flex-col space-y-4">
-              <a href="#" className="text-white hover:text-gray-300 text-lg">
+              <a 
+                onClick={() => navigate('/dashboard')}
+                className="text-white hover:text-gray-300 text-lg">
                 Dashboard
               </a>
               <a href="#" className="text-white hover:text-gray-300 text-lg">
