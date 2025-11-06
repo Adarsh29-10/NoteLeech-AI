@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, FileText, X } from 'lucide-react';
-import UploadPdfBox from '../ChatWithPDF/UploadPdfBox/UploadPdfBox'
+import UploadPdfBox from '../UploadPdfBox/UploadPdfBox'
 
 
 
@@ -27,7 +27,7 @@ const ChatWithPDF = () => {
                 }
             });
 
-            console.log('File uploaded successfully:', response);
+            console.log('File uploaded successfully in chat with pdf:', response);
             setUploadStatus('File uploaded successfully!');
             
         } catch(error) {
