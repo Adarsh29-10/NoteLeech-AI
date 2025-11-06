@@ -2,7 +2,7 @@ import multer from 'multer'
 import fs from 'fs'
 import path from 'path' 
 
-const dir = path.resolve('../backend-python/app');
+const dir = path.resolve('../backend-python/app/public');
 
 if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
