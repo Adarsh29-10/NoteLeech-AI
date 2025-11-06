@@ -37,13 +37,39 @@ const ChatWithPDF = () => {
         }
     };
 
-    const handleSend = () => {
-        // if (inputText.trim()) {
-        //     setMessages(prev => [...prev, { text: inputText, sender: 'user' }]);
-        //     setInputText('');
-        //     // Here you would typically send the message to your AI service
-        // }
+    const handleSend = async () => {
+        if (!inputText.trim()) return;
+
+        // 1️⃣ Add user message to UI
+        const userMessage = { text: inputText, sender: 'user' };
+        setMessages(prev => [...prev, userMessage]);
+        setInputText('');
+
+        try {
+            // 2️⃣ Send message to Node backend
+            const response = await fetch('http://localhost:8000/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    question: inputText,
+                    fileName: uploadedFile.name, // only name, Node knows actual location
+                }),
+            });
+
+            const data = await response.json();
+
+            // 3️⃣ Display AI reply
+            const botMessage = { text: data.answer || 'No response received', sender: 'bot' };
+            setMessages(prev => [...prev, botMessage]);
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setMessages(prev => [
+            ...prev,
+            { text: 'Error: Could not get response from AI', sender: 'bot' },
+            ]);
+        }
     };
+
 
     const handleRemoveFile = () => {
         setUploadedFile(null);
@@ -75,9 +101,30 @@ const ChatWithPDF = () => {
                     <div className="w-full max-w-4xl flex-1 flex flex-col">
                         
                         {/* Chat Messages Area */}
-                        <div className='flex-1'>
+                        {/* <div className='flex-1'> */}
                             {/* pdf and chats logic */}
+                        {/* </div> */}
+
+                        {/* Chat Messages Area */}
+                        <div className="flex-1 overflow-y-auto p-4 space-y-4 text-left">
+                        {messages.map((msg, index) => (
+                            <div
+                            key={index}
+                            className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                            >
+                            <div
+                                className={`max-w-[70%] px-4 py-2 rounded-xl text-sm ${
+                                msg.sender === 'user'
+                                    ? 'bg-blue-600 text-white rounded-br-none'
+                                    : 'bg-gray-700 text-gray-100 rounded-bl-none'
+                                }`}
+                            >
+                                {msg.text}
+                            </div>
+                            </div>
+                        ))}
                         </div>
+
 
 
                         {/* Chat bar Container  */}
