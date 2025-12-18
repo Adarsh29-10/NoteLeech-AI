@@ -1,9 +1,21 @@
-const SignUpButton = () =>{
-    return(
-        <button className='bg-[#0f0f0f] hover:bg-[#171717] border border-white rounded-lg px-6 py-2 text-white font-semibold transition-colors duration-200 shadow-sm'>
-            Sign up
-        </button>
-    )
-}
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default SignUpButton
+const SignUpButton = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/signup");
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="bg-[#0f0f0f] hover:bg-[#171717] border border-white rounded-lg px-6 py-2 text-white font-semibold transition-colors duration-200 shadow-sm"
+    >
+      Sign up
+    </button>
+  );
+};
+
+export default SignUpButton;
