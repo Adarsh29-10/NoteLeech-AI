@@ -45,11 +45,11 @@ const Dashboard = () => {
     };
     
     const handleSend = () => {
-        // if (inputText.trim()) {
-        //     setMessages(prev => [...prev, { text: inputText, sender: 'user' }]);
-        //     setInputText('');
-        //     // Here you would typically send the message to your AI service
-        // }
+        if (inputText.trim()) {
+            setMessages(prev => [...prev, { text: inputText, sender: 'user' }]);
+            setInputText('');
+            // Here you would typically send the message to your AI service
+        }
     };
 
     const handleRemoveFile = () => {
@@ -146,7 +146,7 @@ const Dashboard = () => {
                                     type="text"
                                     placeholder="Ask about your PDF..."
                                     className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none text-sm"
-                                    // onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                                 />
                                 <button 
                                     className="ml-3 p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-all duration-200"
