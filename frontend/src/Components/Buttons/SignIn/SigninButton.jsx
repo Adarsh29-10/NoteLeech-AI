@@ -11,7 +11,7 @@ const SigninButton = () => {
   return (
     <button
       onClick={handleClick}
-      className="bg-[#0f0f0f] hover:bg-[#171717] border border-white rounded-lg px-6 py-2 text-white font-semibold transition-colors duration-200 shadow-sm"
+      className="bg-zinc-800 hover:bg-zinc-700 border border-blue-500/30 hover:border-blue-400/50 rounded-lg px-6 py-2 text-white font-semibold transition-all duration-200 shadow-md hover:shadow-blue-500/20"
     >
       Sign in
     </button>
